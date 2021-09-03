@@ -1,0 +1,55 @@
+<div>
+
+    <form (ngSubmit) = "onSubmit()" class="form">
+        <h1>Add new Fleet</h1>
+    
+        <div class="form-group">
+            <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+            <mat-label> Name</mat-label>
+            <input matInput type="text"  class="form-control" id="name"
+            [(ngModel)] = "createFleet.name" name="name" required>
+        </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+          <mat-form-field appearance="fill" loatLabel="never" [style.width.px]=327 >
+            <mat-label>Companies</mat-label>
+
+            <mat-select (selectionChange)="filterVehicles($event)"  name="Companies"  [(ngModel)]='createFleet.companyArray'>
+              <mat-option  *ngFor="let c of company" [value]="c" >
+           
+                {{c.companyName}}
+              </mat-option>
+        
+            </mat-select>
+          </mat-form-field>
+
+
+        </div>
+    
+        <div class="form-group"> 
+
+
+           <mat-form-field appearance="fill" loatLabel="never" [style.width.px]=327 >
+            <mat-label>Vehicles</mat-label>
+
+            <mat-select  [(ngModel)]='createFleet.vehicles' name="vehicles" multiple>
+              <mat-option   *ngFor="let s of vehicles" [value]="s">
+
+                {{s.vehicleName}}
+              </mat-option>
+        
+            </mat-select>
+          </mat-form-field> 
+      
+        </div>
+
+        <br>
+        
+        <button mat-raised-button color="primary">Submit</button>
+        <button mat-stroked-button color="warn" routerLink="/fleet" class="bt">Cancel</button>
+    
+    </form>
+    <br>
+    </div>
+

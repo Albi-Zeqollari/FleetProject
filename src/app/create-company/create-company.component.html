@@ -1,0 +1,91 @@
+<div>
+
+    
+    <form (ngSubmit) = "onSubmit()" class="form">
+        <h1>Add new company</h1>
+    
+        <div class="form-group">
+            <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+            <mat-label>Company Name</mat-label>
+            <input matInput type="text"  class="form-control" id="name"
+            [(ngModel)] = "createCompany.companyName" name="CompanyName" required >
+        </mat-form-field>
+        </div>
+    
+         <div class="form-group">
+          <h3>CompanyLogo</h3>
+          <button type="button" id="btn" mat-raised-button (click)="fileInput.click()">Choose File</button>
+        <input hidden (change)=" readUrl($event)" #fileInput type="file" id="file" (change)="onFileSelected()" accept="image">
+        <img [src]="url" width="200px" height="100px" id="input">
+           
+        </div>
+        <br>
+    
+        <div class="form-group">
+            <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+            <mat-label>Address</mat-label>
+            <input matInput type="text"  class="form-control" id="address"
+            [(ngModel)] = "createCompany.address" name="address " required>
+        </mat-form-field>
+        </div>
+    
+        <div class="form-group"> 
+          <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+            <mat-label>Email</mat-label>
+            <input matInput type="text"  class="form-control" id="email"
+            [(ngModel)] = "createCompany.email" name="email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        </div>
+
+
+        <div class="form-group">
+
+            <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+            <mat-label>Description</mat-label>
+            <input matInput type="text"  class="form-control" id="description"
+            [(ngModel)] = "createCompany.description" name="description" required >
+        </mat-form-field>
+        </div>
+        
+        <br>
+        
+        <button mat-raised-button color="primary">Submit</button>
+        <button mat-stroked-button color="warn" routerLink="/company" class="bt">Cancel</button>
+    
+    </form>
+    <br>
+    </div>
+
+
+
+
+
+
+<!-- 
+<h1>Create new Company</h1>
+<div class="FORM">
+<mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+    <mat-label>Company Name</mat-label>
+    <input matInput required >
+  </mat-form-field>
+  <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+    <mat-label>Company Logo</mat-label>
+    <input matInput required>
+  </mat-form-field>
+  <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+    <mat-label>Address</mat-label>
+    <input matInput required>
+  </mat-form-field>
+  <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+    <mat-label>Email</mat-label>
+    <input matInput required placeholder="pat@example.com" [formControl]="email">
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+    <mat-label>Description</mat-label>
+    <input matInput required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary">Submit</button>
+</div> -->

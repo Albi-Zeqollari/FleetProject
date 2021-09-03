@@ -1,0 +1,28 @@
+.form {
+
+    margin-top: 50px;
+    margin-left: 805px;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    align-content: space-around;
+    text-align: center;
+   
+  }
+
+  h1{
+      text-align: center;
+      font-family:fantasy;
+  }
+  .bt{
+
+    margin-left: 100px;
+    bottom: 36px;
+  }
+
+  #input{
+    margin-left:20px
+  }
+  #btn{
+    bottom: 13px;
+  }

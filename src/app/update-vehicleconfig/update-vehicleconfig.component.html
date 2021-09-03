@@ -1,0 +1,94 @@
+<div>
+
+  <form (ngSubmit) = "onSubmit()" class="form">
+      <h1>Edit Vehicle</h1>
+  
+      <div class="form-group">
+          <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+          <mat-label>Vehicle Name</mat-label>
+          <input matInput type="text"  class="form-control" id="name"
+          [(ngModel)] = "vehicle.vehicleName" name="vehicleName" required>
+      </mat-form-field>
+      </div>
+
+      <div class="form-group">
+          <mat-form-field appearance="fill" loatLabel="never" [style.width.px]=327 >
+              <mat-label>Companies</mat-label>
+
+              <mat-select [compareWith]="compareObjects" [(ngModel)]='vehicle.company' name="company.companyName">
+                
+                <mat-option *ngFor="let c of company" [value]="c">
+
+                  {{c.companyName}}
+                </mat-option>
+          
+              </mat-select>
+            </mat-form-field> 
+            
+
+      </div>
+
+      <div class="form-group"> 
+
+       <!-- <mat-form-field appearance="fill" loatLabel="never" [style.width.px]=327 >
+          <mat-label>Services</mat-label>
+
+          <mat-select [(ngModel)]='creatVehicle.vehicleServices' name="creatVehicle.serviceName">
+            <mat-option *ngFor="let c of service" [value]="c">
+
+              {{c.serviceName}}
+            </mat-option>
+      
+          </mat-select>
+        </mat-form-field>   -->
+
+        <mat-form-field appearance="fill" loatLabel="never" [style.width.px]=327 >
+          <mat-label>Services</mat-label>
+
+          <mat-select [compareWith]="compareObjects"  [(ngModel)]='vehicle.vehicleServices' name="createVehicle.serviceName" multiple>
+            <mat-option *ngFor="let s of service" [value]="s">
+
+              {{s.serviceName}}
+            </mat-option>
+      
+          </mat-select>
+        </mat-form-field> 
+
+         <!-- <h2>Select services:</h2>
+        <mat-checkbox class="check" *ngFor="let s of service">{{s.serviceName}}</mat-checkbox>  -->
+        
+
+   </div>
+  
+      
+
+      <div class="form-group">
+
+          <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+          <mat-label>Vehicle Consumption</mat-label>
+          <input matInput type="text"  class="form-control" id="consumption"
+          [(ngModel)] = "vehicle.consumption" name="consumption" required >
+      </mat-form-field>
+      </div>
+
+      <div class="form-group">
+
+          <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+          <mat-label>Vehicle Engine</mat-label>
+          <input matInput type="text"  class="form-control" id="vehicleEngine"
+          [(ngModel)] = "vehicle.vehicleEngine" name="vehicleEngine" required >
+      </mat-form-field>
+      </div>
+
+    
+
+      
+      <br>
+      
+      <button mat-raised-button color="primary">Submit</button>
+      <button mat-stroked-button color="warn" class="bt" routerLink="/vehicles">Cancel</button>
+  
+  </form>
+  <br>
+  </div>
+

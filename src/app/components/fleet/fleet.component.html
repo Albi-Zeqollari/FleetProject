@@ -1,0 +1,46 @@
+<h1 style="text-align: center;margin-top: 12px;">Fleet</h1>
+<div *ngIf="fleet">
+
+  
+  <button mat-stroked-button color="" routerLink="/home" class="btn"><mat-icon>replay</mat-icon></button>
+  <button class="btn1" mat-button routerLink='/create-fleet'><mat-icon> add_comment</mat-icon> Add</button>
+  <mat-form-field appearance="standard">
+    <mat-label>Filter by name or company </mat-label>
+    <input matInput (keyup)="applyFilter($event)">
+  </mat-form-field>
+&nbsp;
+
+  
+  
+    <mat-table [dataSource]="flet">
+
+        <mat-header-row *matHeaderRowDef='displayedColums'></mat-header-row>
+        <mat-row *matRowDef='let row,columns:displayedColums'></mat-row>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name</th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
+
+        <ng-container matColumnDef="companyArray">
+            <th mat-header-cell *matHeaderCellDef>Company</th>
+            <td mat-cell *matCellDef="let row"> {{row.companyArray}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <mat-header-cell  *matHeaderCellDef > Actions </mat-header-cell>
+            <mat-cell *matCellDef="let row" >
+              
+                 <button mat-button (click)="updateFleet(row.id)"><mat-icon>border_color</mat-icon></button>
+
+                 <button mat-button (click)="deleteFleet(row.id)"><mat-icon><span class="material-icons">
+                  delete
+                  </span>
+                  </mat-icon></button>
+            </mat-cell>
+          </ng-container>
+
+    </mat-table>
+ 
+  
+</div>

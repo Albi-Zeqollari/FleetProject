@@ -1,0 +1,28 @@
+<h1>Fleet M</h1>
+
+<mat-nav-list class="nav">
+
+    <a mat-list-item routerLink="/company" (click)="onSidenavClose()">
+        <span class="material-icons">
+            business
+            </span><span class="nav-caption">Company Configuration</span>
+    </a>
+    <a mat-list-item routerLink="/vehicles" (click)="onSidenavClose()">
+        <span class="material-icons">
+            emoji_transportation
+            </span>
+            <span class="nav-caption">Vehicle Configuration</span>
+    </a>
+    <a mat-list-item routerLink="/services" (click)="onSidenavClose()">
+        <span class="material-icons">
+            settings
+            </span>
+            <span class="nav-caption">Vehicle Services</span>
+    </a>
+    <a mat-list-item routerLink="/fleet" (click)="onSidenavClose()">
+        <span class="material-icons">
+            commute
+            </span>
+            <span class="nav-caption">Fleet Configuration</span>
+    </a>
+</mat-nav-list>

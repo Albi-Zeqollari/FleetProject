@@ -1,0 +1,49 @@
+<div>
+
+    <form (ngSubmit) = "onSubmit()" class="form">
+        <h1>Add new Vehicle Service</h1>
+    
+        <div class="form-group">
+            <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+            <mat-label>Service Name</mat-label>
+            <input matInput type="text"  class="form-control" id="name"
+            [(ngModel)] = "createVService.serviceName" name="serviceName" required>
+        </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+            <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+            <mat-label>TimeFrequency</mat-label>
+            <input matInput type="text"  class="form-control" id="timeFrequency"
+            [(ngModel)] = "createVService.timeFrequency" name="timeFrequency" required>
+        </mat-form-field>
+        </div>
+    
+        <div class="form-group"> 
+            <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+            <mat-label>Kilometer Frequency</mat-label>
+            <input matInput type="text"  class="form-control" id="kilometerFrequency"
+            [(ngModel)] = "createVService.kilometerFrequency" name="kilometerFrequency" required>
+           
+        </mat-form-field>
+        </div>
+
+
+        <div class="form-group">
+
+            <mat-form-field appearance="fill" floatLabel="never" [style.width.px]=327>
+            <mat-label>Vehicle Description</mat-label>
+            <input matInput type="text"  class="form-control" id="description"
+            [(ngModel)] = "createVService.vehicleDescription" name="description" required >
+        </mat-form-field>
+        </div>
+        
+        <br>
+        
+        <button mat-raised-button color="primary">Submit</button> 
+         <button mat-stroked-button color="warn" routerLink="/services" class="bt">Cancel</button>
+    
+    </form>
+    <br>
+    </div>
+

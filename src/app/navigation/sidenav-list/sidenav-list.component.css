@@ -1,0 +1,25 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover ,a:active{
+    color:lightslategrey;
+}
+
+.nav-caption{
+    display: inline-block;
+    padding: 10px;
+}
+
+.nav{
+    margin-top: 25px;
+   
+}
+
+h1{
+    text-align: center;
+    margin-top:10px;
+   font-weight: bolder;
+   font-family: monospace;
+}
